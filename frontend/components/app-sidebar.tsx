@@ -226,26 +226,26 @@ export function AppSidebar({
 
     // TODO: Temporarily disabled 30s polling — workspace updates now driven by WS events
     // (conversationsVersion from useWebSocket). Re-enable if WS proves unreliable.
-    // useEffect(() => {
-    //     let interval: ReturnType<typeof setInterval> | null = null
-    //     const start = () => {
-    //         if (!interval) interval = setInterval(loadAll, 30000)
-    //     }
-    //     const stop = () => {
-    //         if (interval) {
-    //             clearInterval(interval)
-    //             interval = null
-    //         }
-    //     }
-    //     const onVisibility = () => (document.hidden ? stop() : start())
-    //
-    //     start()
-    //     document.addEventListener("visibilitychange", onVisibility)
-    //     return () => {
-    //         stop()
-    //         document.removeEventListener("visibilitychange", onVisibility)
-    //     }
-    // }, [loadAll])
+    useEffect(() => {
+        let interval: ReturnType<typeof setInterval> | null = null
+        const start = () => {
+            if (!interval) interval = setInterval(loadAll, 30000)
+        }
+        const stop = () => {
+            if (interval) {
+                clearInterval(interval)
+                interval = null
+            }
+        }
+        const onVisibility = () => (document.hidden ? stop() : start())
+
+        start()
+        document.addEventListener("visibilitychange", onVisibility)
+        return () => {
+            stop()
+            document.removeEventListener("visibilitychange", onVisibility)
+        }
+    }, [loadAll])
 
     const handleWorkspaceClick = useCallback(
         (arrayIdx: number) => {
