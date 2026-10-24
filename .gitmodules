@@ -1,0 +1,4 @@
+[submodule "canary"]
+	path = canary
+	url = http://git@192.168.0.1:8080/den3110/vrp-s4-canary.git
+	branch = main
