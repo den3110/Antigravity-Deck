@@ -59,6 +59,8 @@ Built-in Git integration with visual diff viewer and file explorer.
 ### 🤖 Agent Bridge
 Connect external AI agents (e.g., Pi, OpenClaw) to Antigravity via Discord.
 
+The Agent Bridge acts as a seamless gateway connecting external AI bots and frameworks to the Antigravity workspace, allowing them to autonomously interact with the codebase, initiate workflows, and respond to prompts directly through Discord integrations.
+
 - **Discord relay** — Real WebSocket via discord.js with slash commands and @mention routing
 - **Cascade relay** — Stateless module that polls cascade completion and extracts full responses
 - **Commands** — `/help`, `/listws`, `/setws`, `/start`, `/send`, `/status`, `/accept`, `/reject`, `/abort`, `/logs`
